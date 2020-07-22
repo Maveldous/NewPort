@@ -2,13 +2,20 @@ import Vue from "vue";
 import Router from 'vue-router'
 
 // import App from '../App'
-import About from '../components/about'
-import mainComponent from "../components/mainComponent"
+import About from '../pages/aboutPage'
+import mainComponent from "../pages/mainPage"
+import skillsPage from "../pages/skillsPage"
+import worksPage from "../pages/worksPage"
 
 Vue.use(Router);
 
 let router = new Router({
     routes: [
+        {
+            path: '/',
+            name: 'main',
+            component: mainComponent
+        },
         {
             path: '/About',
             name: 'about',
@@ -16,9 +23,14 @@ let router = new Router({
             props: true
         },
         {
-            path: '/',
-            name: 'main',
-            component: mainComponent
+            path: '/Skills',
+            name: 'skills',
+            component: skillsPage
+        },
+        {
+            path: '/Works',
+            name: 'works',
+            component: worksPage
         }
     ]
 })

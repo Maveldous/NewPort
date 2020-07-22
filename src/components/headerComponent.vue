@@ -18,15 +18,19 @@
           </ul>
           <input v-model="name" v-show="!state" class="startWindow__form-input" type="text">
           <div class="startWindow__form-btnBlock">
-            <button v-show="state" @click.prevent="" class="startWindow__form-btnHome">
-              <router-link to='/'><i class="fas fa-home"></i></router-link>
-            </button>
+            <router-link class="router-link" to='/'>
+              <button v-show="state" @click.prevent="headerUpdate(false)" class="startWindow__form-btnHome">
+                <router-link to='/'>
+                  <i class="fas fa-home"></i>
+                </router-link>
+              </button>
+            </router-link>
             <button @click.prevent="" class="startWindow__form-btn">ENG</button>
             <button @click.prevent="" class="startWindow__form-btn">RUS</button>
           </div>
         </form>
         <button 
-            @click.prevent="headerUpdate"
+            @click.prevent="headerUpdate(true)"
             v-show="!state" 
             class="startWindow__main-btn">
             Подтвердить
@@ -46,9 +50,15 @@ export default {
     }
   },
   methods: {
-    headerUpdate: function(){
-      this.state = true
-      let arr = document.querySelectorAll('.startWindow__form-item')
+    headerUpdate: function(statement){
+      let arr;
+      if(statement){
+        this.state = true
+        arr = document.querySelectorAll('.startWindow__form-item, .main__title, .background')
+      }
+      else{
+        arr = document.querySelectorAll('.main__title, .background')
+      }
       new Promise((resolve)=>{
         setTimeout(()=>{
           resolve()
@@ -82,7 +92,7 @@ export default {
     }
 
     &__main{
-      width: 40vw;
+      width: 35vw;
       border: 2px solid black;
       border-radius: 10px;
       text-align: center;
@@ -140,7 +150,7 @@ export default {
 
       &-input{
         width: 200px;
-        height: 20px;
+        height: 25px;
         border: 1px solid #000;
         border-radius: 5px;
       }
@@ -172,11 +182,6 @@ export default {
         border: 1px solid #000;
         border-radius: 50%;
         color: #fff;
-        margin-right: 20px;
-        .router-link-exact-active router-link-active{
-          width: 100%;
-          height: 100%;
-        }
       }
     }
   }
@@ -199,6 +204,9 @@ export default {
         height: 40px;
         font-size: 14px;
       }
+    }
+    .router-link{
+      margin-right: 20px;
     }
   }
 

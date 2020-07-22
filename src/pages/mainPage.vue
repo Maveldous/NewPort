@@ -5,13 +5,19 @@
       </div>
       <nav class="main__nav">
           <ul class="main__nav-items">
-              <li class="main__nav-item"><a href="#"><router-link to='/about'> Обо мне</router-link> </a></li>
-              <li class="main__nav-item"><a href="#"> Мои навыки </a></li>
-              <li class="main__nav-item"><a href="#"> Мои работы </a></li>
+              <li class="main__nav-item">
+                <router-link to='/about'> Обо мне</router-link>
+              </li>
+              <li class="main__nav-item">
+                <router-link to='/skills'> Мои навыки</router-link>
+              </li>
+              <li class="main__nav-item">
+                <router-link to='/works'> Мои работы</router-link>
+              </li>
               <li class="main__nav-item"><a href="#"> Выход </a></li>
           </ul>
       </nav>
-      <img class="background" src="../assets/images/vgif-ru-25372.gif" alt="">
+      <div class="background"  alt=""></div>
   </main>
 </template>
 
@@ -32,10 +38,7 @@ export default {
 <style scoped lang="scss">
 
   .main{
-    width: 100%;
-    height: 100%;
     text-align: center;
-
     &__title{
         position: relative;
         margin: 25vh 0 20vh 0;
@@ -44,12 +47,18 @@ export default {
         &::before{
             position: absolute;
             content: '';
-            width: 60vw;
+            width: 0vw;
             left: 19vw;
             top: 65px;
             height: 10px;
             background: url('../assets/images/line.png') center no-repeat;
             z-index: 4;
+            // opacity: 0;
+            transition: all 0.3s ease;
+        }
+        &.animation::before{
+          // opacity: 1;
+          width: 60vw;
         }
     }
     &__nav-items{
@@ -79,7 +88,11 @@ export default {
     z-index: -1;
     top: 0;
     left: 0;
+    background: rgb(0, 0, 0);
+    &.animation{
+      background: url("../assets/images/orig.gif") no-repeat;
+      background-size: cover;
+    }
   }
-
 </style>
 

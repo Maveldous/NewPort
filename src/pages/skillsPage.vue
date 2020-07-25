@@ -1,7 +1,23 @@
 <template>
-  <div>
-    
-  </div>
+  <section class="skills">
+    <div class="skills__warapper wrapper">
+      <div class="border"></div>
+      <div class="skills__inner inner">
+        <h1 class="skills__title title">Мои навыки</h1>
+        <ul class="skills__list">
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+          <li class="skills__item">Lorem</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

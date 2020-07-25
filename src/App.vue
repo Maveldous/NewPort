@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 
 .bonfire{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   width: 150px;

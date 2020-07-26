@@ -1,5 +1,5 @@
 <template>
-  <article class="map">
+  <article class="map" :class="{'active': state}">
       <div class="map__img">
             <p class="map__text1">TEXT1</p>
         <div class="map__block1"></div>
@@ -32,17 +32,13 @@
 <script>
 
 export default {
-  name: "Map"
-
+  name: "Map",
+  props: ['state']
 };
 </script>
 
 <style lang="scss">
     
-    .map__text1:hover + .map__block1{
-        background: rgba($color: #000, $alpha: 0);
-    }
-
     .map{
         &__img{
         position: relative;
@@ -58,6 +54,7 @@ export default {
         &__text{
             &1, &2, &3, &4, &5, &6, &7, &8, &9{
                 position: absolute;
+                font-family: 'Merriweather', serif;
             }
         }
 
@@ -66,12 +63,86 @@ export default {
                 position: absolute;
                 background: rgba($color: #000, $alpha: 1);
                 transition: all 1s;
-                &:hover{
-                    background: rgba($color: #000, $alpha: 0);
-                }
             }
         }
 
+        &__text1, &__text2, &__text3, &__text4, &__text5, &__text6, &__text7, &__text8, &__text9{
+            position: absolute;
+        }
+
+        &__text1{
+            top: 10%;
+            left: -20%;
+            &:hover + .map__block1{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        &__text2{
+            top: 15%;
+            right: -20%;
+            &:hover + .map__block2{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        &__text3{
+            top: 30%;
+            left: -20%;
+            &:hover + .map__block3{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        &__text4{
+            top: 33%;
+            right: -20%;
+            &:hover + .map__block4{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        
+        &__text5{
+            top: 48%;
+            left: -20%;
+            &:hover + .map__block5{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        &__text6{
+            top: 40%;
+            right: -20%;
+            &:hover + .map__block6{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        &__text7{
+            top: 70%;
+            left: -20%;
+            &:hover + .map__block7 .map__block7-1, &:hover + .map__block7{
+                background: rgba($color: #000, $alpha: 0);
+            }
+
+        }
+
+        &__text8{
+            top: 60%;
+            right: -20%;
+            &:hover + .map__block8{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
+
+        &__text9{
+            top: 80%;
+            right: -20%;
+            &:hover + .map__block9 .map__block9-1, &:hover + .map__block9{
+                background: rgba($color: #000, $alpha: 0);
+            }
+        }
 
         &__block1{
             width: 43%;
@@ -108,11 +179,6 @@ export default {
             top: 55%;
             width: 35%;
             height: 17%;
-            &:hover{
-                .map__block7-1{
-                    background: rgba($color: #000, $alpha: 0);
-                }
-            }
             &-1{
                 top: 100%;
                 width: 180%;
@@ -130,16 +196,19 @@ export default {
             right: 0;
             width: 37%;
             height: 4.6%;
-            &:hover{
-                .map__block9-1{
-                    background: rgba($color: #000, $alpha: 0);
-                }
-            }
             &-1{
                 top: 100%;
                 right: 0;
                 width: 271%;
                 height: 485%;
+            }
+        }
+    }
+
+    .map.active{
+        .map__block{
+            &1, &2, &3, &4, &5, &6, &7, &7-1, &8, &9, &9-1{
+                background: rgba($color: #000, $alpha: 0);
             }
         }
     }

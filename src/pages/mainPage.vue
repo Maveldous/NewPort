@@ -1,20 +1,22 @@
 <template>
   <main class="main">
       <div class="main__warapper">
-        <h1 class="main__title">Портфолио</h1>
+        <h1 class="main__title">{{MAIN_LANG.mainPage.title}}</h1>
       </div>
       <nav class="main__nav">
           <ul class="main__nav-items">
               <li class="main__nav-item">
-                <router-link to='/about'> Обо мне</router-link>
+                <router-link to='/about'> {{MAIN_LANG.mainPage.text1}}</router-link>
               </li>
               <li class="main__nav-item">
-                <router-link to='/skills'> Мои навыки</router-link>
+                <router-link to='/skills'> {{MAIN_LANG.mainPage.text2}}</router-link>
               </li>
               <li class="main__nav-item">
-                <router-link to='/works'> Мои работы</router-link>
+                <router-link to='/works'> {{MAIN_LANG.mainPage.text3}}</router-link>
               </li>
-              <li class="main__nav-item"><a href="#"> Выход </a></li>
+              <li class="main__nav-item">
+                <a @click.prevent="TOGGLE_STATE_TRUE"> {{MAIN_LANG.mainPage.text4}} </a>
+              </li>
           </ul>
       </nav>
       <div class="background"  alt=""></div>
@@ -22,6 +24,9 @@
 </template>
 
 <script>
+
+import {mapGetters, mapActions} from 'vuex'
+
 export default {
   name: "Header",
   data: function(){
@@ -29,8 +34,15 @@ export default {
       
     }
   },
+  computed: {
+    ...mapGetters([
+      'MAIN_LANG'
+    ])
+  },
   methods: {
-    
+    ...mapActions([
+      'TOGGLE_STATE_TRUE'
+    ])
   }
 };
 </script>
@@ -48,17 +60,16 @@ export default {
             position: absolute;
             content: '';
             width: 0vw;
-            left: 19vw;
+            left: 50%;
+            transform: translateX(-50%);
             top: 65px;
             height: 10px;
             background: url('../assets/images/line.png') center no-repeat;
             z-index: 4;
-            // opacity: 0;
             transition: all 0.3s ease;
         }
         &.animation::before{
-          // opacity: 1;
-          width: 60vw;
+          width: 50vw;
         }
     }
     &__nav-items{
@@ -72,9 +83,10 @@ export default {
         &:hover::after{
           position: absolute;
           content: '';
-          width: 130px;
+          width: 150%;
           top: 10px;
-          left: -22px;
+          left: 50%;
+          transform: translateX(-50%);
           z-index: 0;
           box-shadow: 0px 0px 20px 4px rgba(245, 242, 59, 0.6);;
         }

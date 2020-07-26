@@ -19,7 +19,7 @@ h1,h2,h3,p,li,ul,a{
     color: #fff;
 }
 
-button{
+button, a{
     cursor: pointer;
 }
 
@@ -29,6 +29,17 @@ body .animation{
     visibility: visible;
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #0f1200;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(158, 175, 0);;
+}
 
 .wrapper{
     margin: 25vh auto 0;
@@ -49,4 +60,13 @@ body .animation{
 .title{
     margin-bottom: 50px;
     color: rgb(97, 95, 4);
+}
+
+.bonfire{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }

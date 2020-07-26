@@ -17,6 +17,7 @@
         </ul>
       </div>
     </div>
+    <img class="bonfire" src="../assets/images/Bonfire2.gif" alt="">
   </section>
 </template>
 

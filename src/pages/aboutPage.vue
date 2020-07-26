@@ -7,6 +7,7 @@
         <p class="about__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa temporibus repellendus possimus aspernatur autem doloremque tempora consequuntur dolorum labore, iste, quo, ipsam veritatis? Deserunt, inventore ad minus ratione dolorem tenetur!</p>
       </div>
     </div>
+    <img class="bonfire" src="../assets/images/Bonfire2.gif" alt="">
   </section>
 </template>
 

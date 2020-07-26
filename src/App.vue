@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <headerComponent></headerComponent>
-    <keep-alive><router-view></router-view></keep-alive>
-    <img class="bonfire" src="./assets/images/Bonfire2.gif" alt="">
+    <transition name="fade" mode="out-in">
+      <keep-alive>
+          <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
@@ -20,13 +23,11 @@ export default {
 
 <style lang="scss">
 
-.bonfire{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
+.fade-enter-active, .fade-leave-active{
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 
 </style>

@@ -1,39 +1,58 @@
 <template>
   <header class="startWindow">
-    <div class="startWindow__wrapper" :class="{header:state}">
+    <div class="startWindow__wrapper" :class="{header:HEADER_STATE}">
       <div class="startWindow__main">
-        <h1 class="startWindow__main-title" v-show="!state">Здравствуйте {{name}}! </h1>
-        <p class="startWindow__main-text" v-show="!state">Введите свое имя и выберите язык</p>
+        <h1 class="startWindow__main-title" v-show="!HEADER_STATE">
+          {{MAIN_LANG.header.title}} {{HEADER_NAME}}!
+        </h1>
+        <p class="startWindow__main-text" v-show="!HEADER_STATE">
+          {{MAIN_LANG.header.text}}
+        </p>
         <form class="startWindow__form">
-          <ul class="startWindow__form-socialmedia" v-show="state">
+          <ul class="startWindow__form-socialmedia" v-show="HEADER_STATE">
             <li class="startWindow__form-item"> 
-              <a href="https://t.me/Maveldous"> <i class="fab fa-telegram-plane"></i> </a>
+              <a href="https://t.me/Maveldous"> 
+                <i class="fab fa-telegram-plane"></i> 
+              </a>
             </li>
             <li class="startWindow__form-item"> 
-              <a href="https://www.linkedin.com/in/naumov-artem-progdev/"> <i class="fab fa-linkedin-in"></i> </a>
+              <a href="https://www.linkedin.com/in/naumov-artem-progdev/">
+               <i class="fab fa-linkedin-in"></i>
+              </a>
             </li>
             <li class="startWindow__form-item"> 
-              <a href="https://github.com/Maveldous"> <i class="fab fa-github"></i> </a>
+              <a href="https://github.com/Maveldous"> 
+                <i class="fab fa-github"></i> 
+              </a>
             </li>
           </ul>
-          <input v-model="name" v-show="!state" class="startWindow__form-input" type="text">
+          <input 
+            @input="updateName" 
+            v-show="!HEADER_STATE" 
+            class="startWindow__form-input" 
+            type="text"
+          >
           <div class="startWindow__form-btnBlock">
             <router-link class="router-link" to='/'>
-              <button v-show="state" @click.prevent="headerUpdate(false)" class="startWindow__form-btnHome">
+              <button 
+                v-show="HEADER_STATE" 
+                @click.prevent="headerUpdate(false)"
+                class="startWindow__form-btnHome"
+              >
                 <router-link to='/'>
                   <i class="fas fa-home"></i>
                 </router-link>
               </button>
             </router-link>
-            <button @click.prevent="" class="startWindow__form-btn">ENG</button>
-            <button @click.prevent="" class="startWindow__form-btn">RUS</button>
+            <button @click.prevent="TOGGLE_LANG(false)" class="startWindow__form-btn">ENG</button>
+            <button @click.prevent="TOGGLE_LANG(true)" class="startWindow__form-btn">RUS</button>
           </div>
         </form>
         <button 
             @click.prevent="headerUpdate(true)"
-            v-show="!state" 
+            v-show="!HEADER_STATE" 
             class="startWindow__main-btn">
-            Подтвердить
+            {{MAIN_LANG.header.btn}}
         </button>
       </div>
     </div>
@@ -41,19 +60,35 @@
 </template>
 
 <script>
+
+import {mapGetters, mapActions} from 'vuex'
+
 export default {
   name: "Header",
   data: function(){
     return {
-      name: '',
-      state: false
+
     }
   },
+  computed: {
+    ...mapGetters([
+      'HEADER_NAME',
+      'HEADER_STATE',
+      'MAIN_LANG'
+    ])
+  },
   methods: {
+    ...mapActions([
+      'TOGGLE_STATE_TRUE',
+      'TOGGLE_LANG'
+    ]),
+    updateName (e) {
+      this.$store.commit('UPDATE_NAME', e.target.value)
+    },
     headerUpdate: function(statement){
       let arr;
       if(statement){
-        this.state = true
+        this.TOGGLE_STATE_TRUE()
         arr = document.querySelectorAll('.startWindow__form-item, .main__title, .background')
       }
       else{

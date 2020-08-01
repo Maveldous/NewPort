@@ -1,8 +1,8 @@
 <template>
   <section class="works">
-      <h1 class="works__title">Мои работы</h1>
-      <mapComponent :state="stateVision" />
-      <button @click.prevent="stateVision = !stateVision" class="works__btn">Show all</button>
+      <h1 class="works__title">{{MAIN_LANG.mainPage.text3}}</h1>
+      <mapComponent :state="HEADER_STATE_VISION" />
+      <button @click.prevent="TOGGLE_STATE_VISION" class="works__btn">{{MAIN_LANG.Works.btn}}</button>
       <img class="bonfire" src="../assets/images/Bonfire2.gif" alt="">
   </section>
 </template>
@@ -10,16 +10,29 @@
 <script>
 
 import mapComponent from "../components/mapComponent.vue";
+import {mapGetters, mapActions} from "vuex";
+
 
 export default {
   name: "App",
   data: function(){
     return {
-      stateVision: false
+      
     }
   },
   components: {
     mapComponent
+  },
+  computed: {
+    ...mapGetters([
+      'MAIN_LANG',
+      'HEADER_STATE_VISION'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'TOGGLE_STATE_VISION'
+    ])
   }
 };
 </script>

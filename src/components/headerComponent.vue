@@ -86,19 +86,18 @@ export default {
       this.$store.commit('UPDATE_NAME', e.target.value)
     },
     headerUpdate: function(statement){
-      let arr;
+      let arr, time = 2000;
       if(statement){
         this.TOGGLE_STATE_TRUE()
         arr = document.querySelectorAll('.startWindow__form-item, .main__title, .background')
-      }
-      else{
-        arr = document.querySelectorAll('.main__title, .background')
+        time = 1000
       }
       new Promise((resolve)=>{
         setTimeout(()=>{
           resolve()
-        },1000)
+        }, time)
       }).then(()=>{
+        if(!statement) arr = document.querySelectorAll('.main__title, .background')
         arr.forEach((item, index)=>{
             setTimeout(()=>{
               item.classList.add('animation')

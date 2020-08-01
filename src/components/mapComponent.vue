@@ -1,25 +1,25 @@
 <template>
   <article class="map" :class="{'active': state}">
       <div class="map__img">
-            <p class="map__text1">TEXT1</p>
+            <p class="map__text1">{{MAIN_LANG.Works.project1}}</p>
         <div class="map__block1"></div>
-            <p class="map__text2">TEXT2</p>
+            <p class="map__text2">{{MAIN_LANG.Works.project2}}</p>
         <div class="map__block2"></div>
-            <p class="map__text3">TEXT3</p>
+            <p class="map__text3">{{MAIN_LANG.Works.project3}}</p>
         <div class="map__block3"></div>
-            <p class="map__text4">TEXT4</p>
+            <p class="map__text4">{{MAIN_LANG.Works.project4}}</p>
         <div class="map__block4"></div>
-            <p class="map__text5">TEXT5</p>
+            <p class="map__text5">{{MAIN_LANG.Works.project5}}</p>
         <div class="map__block5"></div>
-            <p class="map__text6">TEXT6</p>
+            <p class="map__text6">{{MAIN_LANG.Works.project6}}</p>
         <div class="map__block6"></div>
-            <p class="map__text7">TEXT7</p>
+            <p class="map__text7">{{MAIN_LANG.Works.project7}}</p>
         <div class="map__block7">
             <div class="map__block7-1"></div>
         </div>
-            <p class="map__text8">TEXT8</p>
+            <p class="map__text8">{{MAIN_LANG.Works.project8}}</p>
         <div class="map__block8"></div>
-            <p class="map__text9">TEXT9</p>
+            <p class="map__text9">{{MAIN_LANG.Works.project9}}</p>
         <div class="map__block9">
             <div class="map__block9-1"></div>
         </div>
@@ -30,10 +30,17 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 
 export default {
   name: "Map",
-  props: ['state']
+  props: ['state'],
+  computed: {
+    ...mapGetters([
+      'MAIN_LANG'
+    ])
+  },
 };
 </script>
 
@@ -55,6 +62,7 @@ export default {
             &1, &2, &3, &4, &5, &6, &7, &8, &9{
                 position: absolute;
                 font-family: 'Merriweather', serif;
+                cursor: pointer;
             }
         }
 

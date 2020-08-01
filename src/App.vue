@@ -12,11 +12,21 @@
 <script>
 // import HelloWorld from "./components/HelloWorld.vue"; #42b983
 import headerComponent from "./components/headerComponent.vue";
+import {mapMutations} from 'vuex';
+
 
 export default {
   name: "App",
   components: {
     headerComponent
+  },
+  methods: {
+    ...mapMutations([
+      'CHANGE_LANG'
+    ])
+  },
+  created: function(){
+    this.CHANGE_LANG(true)
   }
 };
 </script>

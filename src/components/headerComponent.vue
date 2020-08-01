@@ -31,6 +31,7 @@
             v-show="!HEADER_STATE" 
             class="startWindow__form-input" 
             type="text"
+            placeholder="Введите свое имя"
           >
           <div class="startWindow__form-btnBlock">
             <router-link class="router-link" to='/'>
@@ -129,6 +130,7 @@ export default {
     &__main{
       width: 35vw;
       border: 2px solid black;
+      background: #181717;
       border-radius: 10px;
       text-align: center;
       transition: all 1s ease;
@@ -157,11 +159,6 @@ export default {
 
     &__form{
       padding: 20px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-
       &-socialmedia{
         display: flex;
       }
@@ -186,8 +183,9 @@ export default {
       &-input{
         width: 200px;
         height: 25px;
-        border: 1px solid #000;
+        border: 2px solid #000;
         border-radius: 5px;
+        margin-bottom: 20px;
       }
 
       &-btn{
@@ -229,8 +227,12 @@ export default {
     .startWindow__main{
       width: 100%;
       border: none;
+      background: transparent;
     }
     .startWindow__form{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
       &-btnBlock{
         margin-right: 20px;

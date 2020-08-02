@@ -121,7 +121,7 @@ export default {
       top: 0;
       justify-content: center;
       align-items: center;
-      z-index: 10;
+      z-index: 1000;
       background-color: rgb(32, 31, 31);
       transition: all 1s ease;
     }

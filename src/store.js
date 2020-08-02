@@ -7,7 +7,7 @@ const store = new Vuex.Store({
     state: {
         name: '',
         state: false,
-        stateVision: false,
+        mapVision: false,
         lang: {},
         engLang: {
             header:{
@@ -23,14 +23,14 @@ const store = new Vuex.Store({
                 text4: 'Exit'
             },
             aboutMe:{
-                text: "Hello! I'm Naumov Artem. Junior Web Developer with over 1 years of experience specializing in front end development. I have experience in working with various technologies and their integration. Will be glad to work with you"
+                text: "! I'm Naumov Artem. Junior Web Developer with over 1 years of experience specializing in front end development. I have experience in working with various technologies and their integration. Will be glad to work with you"
             },
-            Works:{
+            works:{
                 btn: 'Show all',
-                project1: 'Project1',
-                project2: 'Project2',
-                project3: 'Project3',
-                project4: 'Project4',
+                project1: 'Animation project',
+                project2: 'Videoplayer',
+                project3: 'Timers project',
+                project4: 'Landing project',
                 project5: 'Project5',
                 project6: 'Project6',
                 project7: 'Project7',
@@ -52,19 +52,19 @@ const store = new Vuex.Store({
                 text4: 'Выход'
             },
             aboutMe:{
-                text: "Здравствуйте! Меня зовут Наумов Артем. Я веб-разработчик с более чем 1-летним опытом работы в области front-end разработки. У меня есть опыт работы с различными технологиями и их интеграцией. Буду рад работать с вами!"
+                text: "! Меня зовут Наумов Артем. Я веб-разработчик с более чем 1-летним опытом работы в области front-end разработки. У меня есть опыт работы с различными технологиями и их интеграцией. Буду рад работать с вами!"
             },
-            Works:{
+            works:{
                 btn: 'Показать все',
-                project1: 'Проект1',
-                project2: 'Проект2',
-                project3: 'Проект3',
-                project4: 'Проект4',
-                project5: 'Проект5',
-                project6: 'Проект6',
-                project7: 'Проект7',
-                project8: 'Проект8',
-                project9: 'Проект9',
+                project1: 'Animation project',
+                project2: 'Videoplayer',
+                project3: 'Timers project',
+                project4: 'Landing project',
+                project5: 'Project5',
+                project6: 'Project6',
+                project7: 'Project7',
+                project8: 'Project8',
+                project9: 'Project9',
             }
         }
     },
@@ -75,8 +75,8 @@ const store = new Vuex.Store({
         HEADER_STATE(state){
             return state.state
         },
-        HEADER_STATE_VISION(state){
-            return state.stateVision
+        GET_MAP_VISION(state){
+            return state.mapVision
         },
         MAIN_LANG(state){
             return state.lang
@@ -86,8 +86,8 @@ const store = new Vuex.Store({
         CHANGE_STATE_TRUE(state) {
             state.state = !state.state
         },
-        CHANGE_STATE_VISION(state){
-            state.stateVision = !state.stateVision
+        CHANGE_MAP_VISION(state){
+            state.mapVision = !state.mapVision
         },
         UPDATE_NAME(state, payload) {
             state.name = payload
@@ -104,8 +104,8 @@ const store = new Vuex.Store({
         TOGGLE_LANG({commit}, payload){
             commit('CHANGE_LANG', payload)
         },
-        TOGGLE_STATE_VISION({commit}){
-            commit('CHANGE_STATE_VISION')
+        TOGGLE_MAP_VISION({commit}){
+            commit('CHANGE_MAP_VISION')
         }
     }
 })

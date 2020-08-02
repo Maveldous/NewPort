@@ -3,8 +3,13 @@
     <div class="about__warapper wrapper">
       <div class="border"></div>
       <div class="about__inner inner">
-        <h1 class="about__title title">{{MAIN_LANG.mainPage.text1}}</h1>
-        <p class="about__text">{{MAIN_LANG.aboutMe.text}}</p>
+        <h1 class="about__title title">
+          {{MAIN_LANG.mainPage.text1}}
+        </h1>
+        <p class="about__text">
+          {{MAIN_LANG.header.title}}
+          {{HEADER_NAME}}{{MAIN_LANG.aboutMe.text}}
+        </p>
       </div>
     </div>
     <img class="bonfire" src="../assets/images/Bonfire2.gif" alt="">
@@ -23,7 +28,8 @@ export default {
   },
     computed: {
     ...mapGetters([
-      'MAIN_LANG'
+      'MAIN_LANG',
+      'HEADER_NAME'
     ])
   },
   methods: {

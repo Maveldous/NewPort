@@ -33,6 +33,10 @@ export default {
 
 <style lang="scss">
 
+  .wrapper{
+    margin-bottom: 70px;
+  }
+
   .skills__item{
     position: relative;
     margin: 20px 20px 20px 40px;

@@ -1,8 +1,8 @@
 <template>
   <section class="works">
       <h1 class="works__title">{{MAIN_LANG.mainPage.text3}}</h1>
-      <mapComponent :state="HEADER_STATE_VISION" />
-      <button @click.prevent="TOGGLE_STATE_VISION" class="works__btn">{{MAIN_LANG.Works.btn}}</button>
+      <mapComponent/>
+      <button @click.prevent="TOGGLE_MAP_VISION" class="works__btn">{{MAIN_LANG.works.btn}}</button>
       <img class="bonfire" src="../assets/images/Bonfire2.gif" alt="">
   </section>
 </template>
@@ -14,7 +14,7 @@ import {mapGetters, mapActions} from "vuex";
 
 
 export default {
-  name: "App",
+  name: "works",
   data: function(){
     return {
       
@@ -25,13 +25,12 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'MAIN_LANG',
-      'HEADER_STATE_VISION'
+      'MAIN_LANG'
     ])
   },
   methods: {
     ...mapActions([
-      'TOGGLE_STATE_VISION'
+      'TOGGLE_MAP_VISION'
     ])
   }
 };
@@ -49,6 +48,7 @@ export default {
       padding: 10px;
       bottom: 20px;
       left: 20px;
+      z-index: 10;
       border: 1px solid #fff;
       border-radius: 10px;
       background: rgb(32, 31, 31);

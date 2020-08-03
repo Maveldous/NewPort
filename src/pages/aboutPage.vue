@@ -41,7 +41,7 @@ export default {
 <style lang="scss">
 
   .border{
-    height: 100px;
+    height: rem(100);
     background: url('../assets/images/Ornament.png') repeat;
     background-size: cover;
   }
@@ -49,6 +49,7 @@ export default {
   .about__text{
     padding: 20px;
     line-height: 20px;
+    font-size: rem(16);
   }
 
 </style>

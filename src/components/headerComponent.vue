@@ -122,12 +122,12 @@ export default {
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      background-color: rgb(32, 31, 31);
+      background-color: $base-color;
       transition: all 1s ease;
     }
 
     &__main{
-      width: 35vw;
+      width: rem(400);
       border: 2px solid black;
       background: #181717;
       border-radius: 10px;
@@ -137,6 +137,7 @@ export default {
       &-title{
         padding: 20px;
         word-wrap: break-word;
+        font-size: rem(35);
       }
       &-text{
         padding: 5px 0;
@@ -181,7 +182,7 @@ export default {
 
       &-input{
         width: 200px;
-        height: 25px;
+        height: 30px;
         border: 2px solid #000;
         border-radius: 5px;
         margin-bottom: 20px;
@@ -213,7 +214,6 @@ export default {
         background: transparent;
         border: 1px solid #000;
         border-radius: 50%;
-        color: #fff;
       }
     }
   }
@@ -233,6 +233,11 @@ export default {
       align-items: center;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media(max-width: 400px){
+        &{
+          padding: 0px;
+        }
+      }
       &-btnBlock{
         margin-right: 20px;
       }

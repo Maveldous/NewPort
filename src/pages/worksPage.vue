@@ -1,6 +1,6 @@
 <template>
   <section class="works">
-      <h1 class="works__title">{{MAIN_LANG.mainPage.text3}}</h1>
+      <h1 class="works__title title">{{MAIN_LANG.mainPage.text3}}</h1>
       <mapComponent/>
       <button @click.prevent="TOGGLE_MAP_VISION" class="works__btn">{{MAIN_LANG.works.btn}}</button>
       <img class="bonfire" src="../assets/images/Bonfire2.gif" alt="">
@@ -51,7 +51,7 @@ export default {
       z-index: 10;
       border: 1px solid #fff;
       border-radius: 10px;
-      background: rgb(32, 31, 31);
+      background: $base-color;
       color: #fff;
     }
   }

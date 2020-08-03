@@ -58,7 +58,7 @@ export default {
     &__title{
         position: relative;
         margin: 25vh 0 20vh 0;
-        font-size: 100px;
+        font-size: rem(100);
         font-family: 'Merriweather', serif;
         &::before{
             position: absolute;
@@ -66,7 +66,7 @@ export default {
             width: 0vw;
             left: 50%;
             transform: translateX(-50%);
-            top: 65px;
+            top: 55px;
             height: 10px;
             background: url('../assets/images/line.png') center no-repeat;
             z-index: 4;
@@ -106,7 +106,7 @@ export default {
     z-index: -1;
     top: 0;
     left: 0;
-    background: rgb(0, 0, 0);
+    background: #000;
     &.animation{
       transform: translateY(0px);
       background: url("../assets/images/orig.gif") no-repeat;

@@ -53,6 +53,11 @@ export default {
       border-radius: 10px;
       background: $base-color;
       color: #fff;
+      @media(max-width: $tableWidth){
+        &{
+          display: none;
+        }
+      }
     }
   }
 

@@ -48,6 +48,11 @@ export default {
             right: 0;
             bottom: 0;
             background: #000;
+            @media(max-width: $tableWidth){
+              &{
+                background: transparent;
+              }
+            }
         }
         &-text{
           position: absolute;
@@ -56,6 +61,14 @@ export default {
           font-size: 20px;
           z-index: 5;
           text-align: center;
+          @media(max-width: 1100px){
+            .map .project__box &{
+              top: -10%;
+              left: 50%;
+              right: 0;
+              transform: translateX(-50%);
+            }
+          }
           &:hover + .project__box-hide{
             background: transparent;
           }
@@ -72,8 +85,20 @@ export default {
         "box3 box3 box2 box2"
         "box3 box3 box4 box4"
         ".    .    box4 box4";
+      
+      @media(max-width: $tableWidth){
+        &{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+          "box1 box1 box1 box1"
+          "box2 box2 box2 box2"
+          "box3 box3 box3 box3"
+          "box4 box4 box4 box4";
+        }
+        grid-row-gap: 100px;
+      }
       &.show .project__box-hide{
-            background: transparent;
+        background: transparent;
       }
     }
     .box1{
@@ -97,7 +122,9 @@ export default {
         }
     }
     .box3{
-        background: url('../assets/images/timers__project.png');
+        background: url('../assets/images/timers__project.png') no-repeat;
+        background-size: contain;
+        max-width: 100%;
         width: 422px;
         height: 535px;
         grid-area: box3;

@@ -44,12 +44,23 @@ export default {
     height: rem(100);
     background: url('../assets/images/Ornament.png') repeat;
     background-size: cover;
+    @media(max-width: $phoneWidth) {
+      &{
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
   }
 
   .about__text{
     padding: 20px;
     line-height: 20px;
     font-size: rem(16);
+    @media(max-width: $phoneWidth) {
+      &{
+        padding: 5px;
+      }
+    }
   }
 
 </style>

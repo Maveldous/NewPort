@@ -127,7 +127,7 @@ export default {
     }
 
     &__main{
-      width: rem(400);
+      width: rem(455);
       border: 2px solid black;
       background: #181717;
       border-radius: 10px;

@@ -56,24 +56,30 @@ export default {
     width: 100vw;
     overflow: hidden;
     &__title{
+        display: inline-block;
         position: relative;
         margin: 25vh 0 20vh 0;
-        font-size: rem(100);
+        font-size: rem(100px);
         font-family: 'Merriweather', serif;
+        @media (max-width: $phoneWidth) {
+          &{
+            font-size: rem(75px);
+          }
+        }
         &::before{
             position: absolute;
             content: '';
-            width: 0vw;
+            width: 0%;
             left: 50%;
-            transform: translateX(-50%);
-            top: 55px;
+            transform: translateX(-50%) translateY(-50%);
+            top: 55%;
             height: 10px;
-            background: url('../assets/images/line.png') center no-repeat;
+            background: url('../assets/images/line.png') center repeat;
             z-index: 4;
             transition: all 0.3s ease;
         }
         &.animation::before{
-          width: 50vw;
+          width: 130%;
         }
     }
     &__nav-items{

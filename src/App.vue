@@ -10,9 +10,8 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue"; #42b983
 import headerComponent from "./components/headerComponent.vue";
-import {mapMutations} from 'vuex';
+import {mapMutations, mapGetters} from 'vuex';
 
 
 export default {
@@ -20,13 +19,23 @@ export default {
   components: {
     headerComponent
   },
+  computed: {
+    ...mapGetters([
+      'HEADER_NAME'
+    ])
+  },
   methods: {
     ...mapMutations([
-      'CHANGE_LANG'
+      'CHANGE_LANG',
+      'UPDATE_NAME'
     ])
   },
   created: function(){
     this.CHANGE_LANG(true)
+    window.addEventListener("unload", () => {
+      localStorage.setItem('name', this.HEADER_NAME)
+    })
+    this.UPDATE_NAME(localStorage.getItem('name'))
   }
 };
 </script>

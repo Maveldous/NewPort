@@ -23,7 +23,8 @@ const store = new Vuex.Store({
                 text4: 'Exit'
             },
             aboutMe:{
-                text: "! I'm Naumov Artem. Junior Web Developer with over 1 years of experience specializing in front end development. I have experience in working with various technologies and their integration. Will be glad to work with you"
+                text: `! My name is Naumov Artem. I have been doing front-end development for over a year. Most of this time I worked as a freelancer or creating my own pet-projects.
+                Despite my passion for the web, I have never forgotten about other PLs, so now I can boast of a good experience of working with C ++ and C #. I'am familiar and have worked with many concepts, principles of programming, such as: Rest API, Solid, OOP, Functional programming and etc. Most of my skills are listed in the "My Skills" section. From soft skills, I can single out: communication skills, teamwork, good time management and a responsible approach to any business. Since this is the section "About Me", I can add a little about my hobbies, namely: love of playing chess, reading foreign or classical literature, as well as playing sports with friends. In general, that's all, thank you for your time with this text and hope to work with you soon!`
             },
             works:{
                 btn: 'Show all',
@@ -52,7 +53,8 @@ const store = new Vuex.Store({
                 text4: 'Выход'
             },
             aboutMe:{
-                text: "! Меня зовут Наумов Артем. Я веб-разработчик с более чем 1-летним опытом работы в области front-end разработки. У меня есть опыт работы с различными технологиями и их интеграцией. Буду рад работать с вами!"
+                text: `! Меня зовут Наумов Артем. Более года я занимаюсь front-end разработкой. Большую часть этого времени проработал на фрилансе или создавая свои pet-проекты.
+                Не смотря на мою увлеченность вэбом, никогда не забывал про другие ЯПы, поэтому сейчас могу похвастаться хорошим опытом работы с C++ и С#. Знаком и работал с многими концепциями, принципами программирования, такими как: Rest API, Solid, OOP, Functional programming и etc. Большая часть моих навыков указана в разделе "Мои навыки". Из soft skills могу выделить коммуникативные навыки, работа в команде, хороший тайм менеджмент и ответственный подход к любому делу. Так как это раздел "О себе", могу добавить немного про свои увлечения, а именно: любовь к игре в шахматы, чтение зарубежной или классической литературы, а так же занятия спортом с друзьями. В целом, это все, спасибо за уделенное время этому тексту и надеюсь на скорую работу с вами!`
             },
             works:{
                 btn: 'Показать все',

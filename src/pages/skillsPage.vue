@@ -40,6 +40,7 @@ export default {
   .skills__item{
     position: relative;
     margin: 20px 20px 20px 40px;
+    word-wrap: break-word;
 
     &.item1::before, &.item2::before, &.item3::before, &.item4::before, &.item5::before, &.item6::before, &.item7::before{
       content: '';

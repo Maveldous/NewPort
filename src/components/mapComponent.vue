@@ -1,19 +1,47 @@
 <template>
   <article class="map" :class="{'show': GET_MAP_VISION}">
     <div class="project__box box1">
-        <a href="#" class="project__box-text">{{MAIN_LANG.works.project1}}</a>
+        <p class="project__box-text">
+          <a 
+            class="box__text-ref"
+            href="https://maveldous.github.io/Some_projects/Aimation/">
+            {{MAIN_LANG.works.project1}}
+          </a>
+          <a class="box__text-git" href="https://github.com/Maveldous/Animations">github</a>
+        </p>
         <div class="project__box-hide"></div>
     </div>
     <div class="project__box box2">
-        <a href="#" class="project__box-text">{{MAIN_LANG.works.project2}}</a>
+        <p class="project__box-text">
+          <a 
+            class="box__text-ref" 
+            href="https://maveldous.github.io/Some_projects/VueVideo/">
+            {{MAIN_LANG.works.project2}}
+          </a>
+          <a class="box__text-git" href="https://github.com/Maveldous/VueVideo">github</a>
+        </p>
         <div class="project__box-hide"></div>
     </div>
     <div class="project__box box3">
-        <a href="#" class="project__box-text">{{MAIN_LANG.works.project3}}</a>
+        <p class="project__box-text">
+          <a 
+            class="box__text-ref" 
+            href="https://maveldous.github.io/Some_projects/TimersProject">
+            {{MAIN_LANG.works.project3}}
+          </a>
+          <a class="box__text-git" href="https://github.com/Maveldous/TimersPage">github</a>
+        </p>
         <div class="project__box-hide"></div>
     </div>
     <div class="project__box box4">
-        <a href="#" class="project__box-text">{{MAIN_LANG.works.project4}}</a>
+        <p class="project__box-text">
+          <a 
+            class="box__text-ref" 
+            href="https://maveldous.github.io/Some_projects/LandingProject">
+            {{MAIN_LANG.works.project4}}
+          </a>
+          <a class="box__text-git" href="https://github.com/Maveldous/landingPageProject">github</a>
+        </p>
         <div class="project__box-hide"></div>
     </div>
   </article>
@@ -56,13 +84,18 @@ export default {
         }
         &-text{
           position: absolute;
-          width: 80px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 120px;
           font-family: 'Merriweather', serif;
           font-size: 20px;
           z-index: 5;
           text-align: center;
           @media(max-width: 1100px){
             .map .project__box &{
+              display: block;
+              width: 100%;
               top: -10%;
               left: 50%;
               right: 0;
@@ -71,6 +104,10 @@ export default {
           }
           &:hover + .project__box-hide{
             background: transparent;
+          }
+          .box__text-git{
+            margin: 10px;
+            color: #218129;
           }
         }
     }

@@ -35,7 +35,9 @@ export default {
     window.addEventListener("unload", () => {
       localStorage.setItem('name', this.HEADER_NAME)
     })
-    this.UPDATE_NAME(localStorage.getItem('name'))
+    if(localStorage.getItem('name') && localStorage.getItem('name') != 'null' ){
+      this.UPDATE_NAME(localStorage.getItem('name'))
+    }
   }
 };
 </script>

@@ -13,7 +13,8 @@ const store = new Vuex.Store({
             header:{
                 title: 'Hello',
                 text: 'Enter your name and select a language',
-                btn: 'Confirm'
+                btn: 'Confirm',
+                placeholder: 'Enter your name'
             },
             mainPage:{
                 title: 'Portfolio',
@@ -32,9 +33,9 @@ const store = new Vuex.Store({
                 project2: 'Videoplayer',
                 project3: 'Timers project',
                 project4: 'Landing project',
-                project5: 'Project5',
-                project6: 'Project6',
-                project7: 'Project7',
+                project5: 'Wether Plugin',
+                project6: '2048 game',
+                project7: 'Mindformat project',
                 project8: 'Project8',
                 project9: 'Project9',
             }
@@ -43,7 +44,8 @@ const store = new Vuex.Store({
             header:{
                 title: 'Здравствуйте',
                 text: 'Введите свое имя и выберите язык',
-                btn: 'Подтвердить'
+                btn: 'Подтвердить',
+                placeholder: 'Введите свое имя'
             },
             mainPage:{
                 title: 'Портфолио',
@@ -62,9 +64,9 @@ const store = new Vuex.Store({
                 project2: 'Videoplayer',
                 project3: 'Timers project',
                 project4: 'Landing project',
-                project5: 'Project5',
-                project6: 'Project6',
-                project7: 'Project7',
+                project5: 'Wether Plugin',
+                project6: '2048 game',
+                project7: 'Mindformat project',
                 project8: 'Project8',
                 project9: 'Project9',
             }

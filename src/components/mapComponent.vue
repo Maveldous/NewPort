@@ -3,11 +3,11 @@
     <div class="project__box box1">
         <p class="project__box-text">
           <a 
-            class="box__text-ref"
-            href="https://maveldous.github.io/Some_projects/Aimation/">
-            {{MAIN_LANG.works.project1}}
+            class="box__text-ref" 
+            href="https://maveldous.github.io/Some_projects/LandingProject">
+            {{MAIN_LANG.works.project4}}
           </a>
-          <a class="box__text-git" href="https://github.com/Maveldous/Animations">github</a>
+          <a class="box__text-git" href="https://github.com/Maveldous/landingPageProject">github</a>
         </p>
         <div class="project__box-hide"></div>
     </div>
@@ -36,13 +36,45 @@
     <div class="project__box box4">
         <p class="project__box-text">
           <a 
-            class="box__text-ref" 
-            href="https://maveldous.github.io/Some_projects/LandingProject">
-            {{MAIN_LANG.works.project4}}
+            class="box__text-ref"
+            href="https://maveldous.github.io/Some_projects/Aimation/">
+            {{MAIN_LANG.works.project1}}
           </a>
-          <a class="box__text-git" href="https://github.com/Maveldous/landingPageProject">github</a>
+          <a class="box__text-git" href="https://github.com/Maveldous/Animations">github</a>
         </p>
         <div class="project__box-hide"></div>
+    </div>
+    <div class="project__box box5">
+        <p class="project__box-text">
+          <a 
+            class="box__text-ref" 
+            href="https://maveldous.github.io/Some_projects/WetherPlug">
+            {{MAIN_LANG.works.project5}}
+          </a>
+          <a class="box__text-git" href="https://github.com/Maveldous/WetherWidget">github</a>
+        </p>
+        <div class="project__box-hide"></div>
+    </div>
+    <div class="project__box box6">
+      <p class="project__box-text">
+        <a 
+          class="box__text-ref" 
+          href="https://maveldous.github.io/Some_projects/2048Project">
+          {{MAIN_LANG.works.project6}}
+        </a>
+        <a class="box__text-git" href="https://github.com/Maveldous/2048">github</a>
+      </p>
+      <div class="project__box-hide"></div>
+    </div>
+    <div class="project__box box7">
+      <p class="project__box-text">
+        <a 
+          class="box__text-ref" 
+          href="https://mindformat.ru/lab">
+          {{MAIN_LANG.works.project7}}
+        </a>
+      </p>
+      <div class="project__box-hide"></div>
     </div>
   </article>
 </template>
@@ -112,25 +144,34 @@ export default {
         }
     }
     .map{
-      margin-top: 140px;
+      margin-top: 180px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: repeat(9, 1fr);
       grid-template-areas: 
-        ".    box1 box2 box2"
-        ".    box1 box2 box2"
+        ".    box7 box7 .   "
+        ".    .    box6 box6"
+        "box1 .    box6 box6"
+        "box1 .    box2 box2"
+        "box1 .    box2 box2"
         "box3 box3 box2 box2"
         "box3 box3 box4 box4"
-        ".    .    box4 box4";
+        "box5 box5 box4 box4"
+        "box5 box5 .    .   "
+        ;
       
       @media(max-width: $tableWidth){
         &{
-        grid-template-rows: repeat(4, 1fr);
+        margin-top: 30px;
+        grid-template-rows: 220px repeat(6, 1fr);
         grid-template-areas: 
+          "box7 box7 box7 box7"
+          "box6 box6 box6 box6"
           "box1 box1 box1 box1"
           "box2 box2 box2 box2"
           "box3 box3 box3 box3"
-          "box4 box4 box4 box4";
+          "box4 box4 box4 box4"
+          "box5 box5 box5 box5";
         }
         grid-row-gap: 100px;
       }
@@ -139,13 +180,13 @@ export default {
       }
     }
     .box1{
-        background: url('../assets/images/animation_project.png');
-        width: 264px;
-        height: 640px;
+        background: url('../assets/images/landing__project.png');
+        width: 206px;
+        height: 652px;
         grid-area: box1;
         & .project__box-text{
-          left: -50%;
-          top: 30%;
+          right: -60%;
+          top: 40%;
         }
     }
     .box2{
@@ -154,7 +195,7 @@ export default {
         height: 600px;
         grid-area: box2;
         & .project__box-text{
-          right: -50%;
+          left: -50%;
           top: 40%;
         }
     }
@@ -171,13 +212,49 @@ export default {
         }
     }
     .box4{
-        background: url('../assets/images/landing__project.png');
-        width: 206px;
-        height: 652px;
+        background: url('../assets/images/animation_project.png');
+        width: 264px;
+        height: 640px;
         grid-area: box4;
         & .project__box-text{
-          left: -60%;
+          left: -50%;
+          top: 30%;
+        }
+    }
+    .box5{
+        background: url('../assets/images/wetherPlugin__project.png');
+        width: 281px;
+        height: 610px;
+        grid-area: box5;
+        & .project__box-text{
+          right: -50%;
+          top: 60%;
+        }
+    }
+    .box6{
+        background: url('../assets/images/2048_project.png') no-repeat;
+        background-size: contain;
+        margin-bottom: 40px;
+        max-width: 100%;
+        width: 100%;
+        height: 410px;
+        grid-area: box6;
+        & .project__box-text{
+          left: -20%;
           top: 40%;
+        }
+    }
+    .box7{
+        background: url('../assets/images/mindformat_project.png') no-repeat;
+        background-size: contain;
+        margin-bottom: 40px;
+        max-width: 100%;
+        width: 100%;
+        height: 350px;
+        grid-area: box7;
+        & .project__box-text{
+          right: 40%;
+          top: -25%;
         }
     }
 

@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Router from 'vue-router'
 
-// import App from '../App'
 import About from '../pages/aboutPage'
 import mainComponent from "../pages/mainPage"
 import skillsPage from "../pages/skillsPage"

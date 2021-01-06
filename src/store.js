@@ -36,7 +36,7 @@ const store = new Vuex.Store({
                 project5: 'Wether Plugin',
                 project6: '2048 game',
                 project7: 'Mindformat project',
-                project8: 'Project8',
+                project8: 'Gifs PWA TS project',
                 project9: 'Project9',
             }
         },
@@ -67,7 +67,7 @@ const store = new Vuex.Store({
                 project5: 'Wether Plugin',
                 project6: '2048 game',
                 project7: 'Mindformat project',
-                project8: 'Project8',
+                project8: 'Gifs PWA TS project',
                 project9: 'Project9',
             }
         }

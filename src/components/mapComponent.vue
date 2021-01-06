@@ -76,6 +76,17 @@
       </p>
       <div class="project__box-hide"></div>
     </div>
+    <div class="project__box box8">
+      <p class="project__box-text">
+        <a 
+          class="box__text-ref" 
+          href="https://maveldous.github.io/Some_projects/gifTSProject/">
+          {{MAIN_LANG.works.project8}}
+        </a>
+        <a class="box__text-git" href="https://github.com/Maveldous/Vuetify_gifs_project">github</a>
+      </p>
+      <div class="project__box-hide"></div>
+    </div>
   </article>
 </template>
 
@@ -147,9 +158,11 @@ export default {
       margin-top: 180px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(9, 1fr);
+      grid-template-rows: repeat(11, 1fr);
       grid-template-areas: 
         ".    box7 box7 .   "
+        "box8 box8 box8 ."
+        "box8 box8 box8 ."
         ".    .    box6 box6"
         "box1 .    box6 box6"
         "box1 .    box2 box2"
@@ -166,7 +179,9 @@ export default {
         grid-template-rows: 220px repeat(6, 1fr);
         grid-template-areas: 
           "box7 box7 box7 box7"
+          "box8 box8 box8 box8"
           "box6 box6 box6 box6"
+          "box1 box1 box1 box1"
           "box1 box1 box1 box1"
           "box2 box2 box2 box2"
           "box3 box3 box3 box3"
@@ -253,9 +268,28 @@ export default {
         height: 350px;
         grid-area: box7;
         & .project__box-text{
-          right: 40%;
+          right: 55%;
           top: -25%;
         }
+    }
+    .box8{
+      background: url('../assets/images/gifsTS__project.png') no-repeat;
+      background-size: contain;
+      margin-left: 7rem;
+      margin-bottom: 40px;
+      max-width: 100%;
+      width: 100%;
+      height: 350px;
+      grid-area: box8;
+      & .project__box-text{
+        left: 700px;
+        top: 35%;
+      }
+       @media(max-width: $tableWidth){
+         & {
+           margin-left: auto;
+         }
+       }
     }
 
 </style>
